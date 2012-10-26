@@ -102,7 +102,7 @@
 
 // Give the tabs something to sit on
 .nav-tabs {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid transparent;
 }
 // Make the list-items overlay the bottom border
 .nav-tabs > li {
@@ -113,8 +113,8 @@
   padding-top: 8px;
   padding-bottom: 8px;
   line-height: @baseLineHeight;
-  border: 1px solid transparent;
-  .border-radius(4px 4px 0 0);
+  border: 3px solid transparent;
+  .border-radius(0px 0px 0 0);
   &:hover {
     border-color: @grayLighter @grayLighter #ddd;
   }
@@ -124,8 +124,8 @@
 .nav-tabs > .active > a:hover {
   color: @gray;
   background-color: @white;
-  border: 1px solid #ddd;
-  border-bottom-color: transparent;
+  border: 3px solid transparent;
+  border-bottom-color: @linkColor;
   cursor: default;
 }
 
@@ -139,7 +139,7 @@
   padding-bottom: 8px;
   margin-top: 2px;
   margin-bottom: 2px;
-  .border-radius(5px);
+  .border-radius(0px);
 }
 
 // Active state
@@ -167,14 +167,15 @@
   border-bottom: 0;
 }
 .nav-tabs.nav-stacked > li > a {
-  border: 1px solid #ddd;
+  border: 3px solid #ddd;
+  border-bottom-color: @linkColor;
   .border-radius(0);
 }
 .nav-tabs.nav-stacked > li:first-child > a {
-  .border-top-radius(4px);
+  .border-top-radius(0px);
 }
 .nav-tabs.nav-stacked > li:last-child > a {
-  .border-bottom-radius(4px);
+  .border-bottom-radius(0px);
 }
 .nav-tabs.nav-stacked > li > a:hover {
   border-color: #ddd;
@@ -305,13 +306,13 @@
 .tabs-below > .nav-tabs > li > a {
   .border-radius(0 0 4px 4px);
   &:hover {
-    border-bottom-color: transparent;
-    border-top-color: #ddd;
+    border-top-color: transparent;
+    border-bottom-color: #ddd;
   }
 }
 .tabs-below > .nav-tabs > .active > a,
 .tabs-below > .nav-tabs > .active > a:hover {
-  border-color: transparent #ddd #ddd #ddd;
+  border-color: transparent transparent @linkColor transparent;
 }
 
 // LEFT & RIGHT
@@ -340,11 +341,15 @@
   .border-radius(4px 0 0 4px);
 }
 .tabs-left > .nav-tabs > li > a:hover {
-  border-color: @grayLighter #ddd @grayLighter @grayLighter;
+  /*  border-color: @grayLighter #ddd @grayLighter @grayLighter;*/
+  border-color: transparent transparent transparent #ddd;
+  
 }
 .tabs-left > .nav-tabs .active > a,
 .tabs-left > .nav-tabs .active > a:hover {
-  border-color: #ddd transparent #ddd #ddd;
+  /*  border-color: #ddd transparent #ddd #ddd;*/
+  border-color: transparent transparent transparent @linkColor;
+
   *border-right-color: @white;
 }
 
@@ -359,11 +364,13 @@
   .border-radius(0 4px 4px 0);
 }
 .tabs-right > .nav-tabs > li > a:hover {
-  border-color: @grayLighter @grayLighter @grayLighter #ddd;
+/*  border-color: @grayLighter @grayLighter @grayLighter #ddd;*/
+  border-color: transparent #ddd transparent transparent;
 }
 .tabs-right > .nav-tabs .active > a,
 .tabs-right > .nav-tabs .active > a:hover {
-  border-color: #ddd #ddd #ddd transparent;
+/*  border-color: #ddd #ddd #ddd transparent;*/
+  border-color: transparent @linkColor transparent transparent;
   *border-left-color: @white;
 }
 
