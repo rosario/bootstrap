@@ -124,7 +124,7 @@
 .nav-tabs > .active > a:hover {
   color: @gray;
   background-color: @white;
-  border: 3px solid transparent;
+  border: 3px solid @white;
   border-bottom-color: @linkColor;
   cursor: default;
 }
@@ -167,8 +167,9 @@
   border-bottom: 0;
 }
 .nav-tabs.nav-stacked > li > a {
-  border: 3px solid #ddd;
-  border-bottom-color: @linkColor;
+  border: 3px solid @white;
+  border-bottom-color: #ddd;
+  margin-bottom: 2px;
   .border-radius(0);
 }
 .nav-tabs.nav-stacked > li:first-child > a {
@@ -178,13 +179,13 @@
   .border-bottom-radius(0px);
 }
 .nav-tabs.nav-stacked > li > a:hover {
-  border-color: #ddd;
+  border-bottom-color: @linkColor;
   z-index: 2;
 }
 
 // Pills
 .nav-pills.nav-stacked > li > a {
-  margin-bottom: 3px;
+  margin-bottom: 2px;
 }
 .nav-pills.nav-stacked > li:last-child > a {
   margin-bottom: 1px; // decrease margin to match sizing of stacked tabs
@@ -196,18 +197,18 @@
 // ---------
 
 .nav-tabs .dropdown-menu {
-  .border-radius(0 0 6px 6px); // remove the top rounded corners here since there is a hard edge above the menu
+  .border-radius(0px); // remove the top rounded corners here since there is a hard edge above the menu
 }
 .nav-pills .dropdown-menu {
-  .border-radius(6px); // make rounded corners match the pills
+  .border-radius(0px); // make rounded corners match the pills
 }
 
 // Default dropdown links
 // -------------------------
 // Make carets use linkColor to start
 .nav .dropdown-toggle .caret {
-  border-top-color: @linkColor;
-  border-bottom-color: @linkColor;
+/*  border-top-color: @linkColor;*/
+/*  border-bottom-color: @linkColor;*/
   margin-top: 6px;
 }
 .nav .dropdown-toggle:hover .caret {
@@ -243,7 +244,7 @@
 .nav > li.dropdown.open.active > a:hover {
   color: @white;
   background-color: @grayLight;
-  border-color: @grayLight;
+  border-color: @white;
 }
 .nav li.dropdown.open .caret,
 .nav li.dropdown.open.active .caret,
@@ -255,7 +256,7 @@
 
 // Dropdowns in stacked tabs
 .tabs-stacked .open > a:hover {
-  border-color: @grayLight;
+  border-color: @white;
 }
 
 
