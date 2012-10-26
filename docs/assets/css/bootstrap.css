@@ -1661,9 +1661,9 @@ input.search-query {
   /* IE7-8 doesn't have border-radius, so don't indent the padding */
 
   margin-bottom: 0;
-  -webkit-border-radius: 15px;
-     -moz-border-radius: 15px;
-          border-radius: 15px;
+  -webkit-border-radius: 0;
+     -moz-border-radius: 0;
+          border-radius: 0;
 }
 
 /* Allow for input prepend/append in search forms */
@@ -1676,27 +1676,23 @@ input.search-query {
 }
 
 .form-search .input-append .search-query {
-  -webkit-border-radius: 14px 0 0 14px;
-     -moz-border-radius: 14px 0 0 14px;
-          border-radius: 14px 0 0 14px;
+  /*  .border-radius(14px 0 0 14px);*/
+
 }
 
 .form-search .input-append .btn {
-  -webkit-border-radius: 0 14px 14px 0;
-     -moz-border-radius: 0 14px 14px 0;
-          border-radius: 0 14px 14px 0;
+  /*  .border-radius(0 14px 14px 0);*/
+
 }
 
 .form-search .input-prepend .search-query {
-  -webkit-border-radius: 0 14px 14px 0;
-     -moz-border-radius: 0 14px 14px 0;
-          border-radius: 0 14px 14px 0;
+  /*  .border-radius(0 14px 14px 0);*/
+
 }
 
 .form-search .input-prepend .btn {
-  -webkit-border-radius: 14px 0 0 14px;
-     -moz-border-radius: 14px 0 0 14px;
-          border-radius: 14px 0 0 14px;
+  /*  .border-radius(14px 0 0 14px);*/
+
 }
 
 .form-search input,
@@ -3038,7 +3034,7 @@ button.close {
   cursor: pointer;
   background-color: #d5d5d5;
   *background-color: #bbbbbb;
-  border: 0px solid #bbbbbb;
+  border: 1px solid #bbbbbb;
   *border: 0;
   border-bottom-color: #a2a2a2;
   -webkit-border-radius: 0;
